@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('Prepare') {
       steps {
-        sh 'docker pull $DOCKER_RPMBUILD_EL7-rust'
-        sh 'docker pull $DOCKER_CI_TOOLS'
+        sh 'docker pull ${DOCKER_RPMBUILD_EL7}:rust'
+        sh 'docker pull ${DOCKER_CI_TOOLS}'
       }
     }
     stage('Build') {
@@ -29,7 +29,7 @@ CMD="docker run --rm \\
   -v $CWD/SRPMS:/home/rpmbuilder/rpmbuild/SRPMS \\
   -v $CWD/SPECS:/home/rpmbuilder/rpmbuild/SPECS \\
   -v $CWD/SOURCES:/home/rpmbuilder/rpmbuild/SOURCES \\
-  \${DOCKER_RPMBUILD_EL7}-rust \\
+  \${DOCKER_RPMBUILD_EL7}:rust \\
   /bin/build-spec $BUILD_SPEC_ARGS -- /home/rpmbuilder/rpmbuild/SPECS/$PACKAGE.spec"
 
 $CMD
