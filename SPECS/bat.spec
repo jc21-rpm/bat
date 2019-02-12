@@ -25,13 +25,14 @@ tar xzf v%{version}.tar.gz
 cd %{name}-%{version}
 
 %build
+cd %{name}-%{version}
 cargo build --release
 
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
-cp target/release/bat %{buildroot}/usr/bin/
+cp %{name}-%{version}/target/release/bat %{buildroot}/usr/bin/
 
 
 %clean
