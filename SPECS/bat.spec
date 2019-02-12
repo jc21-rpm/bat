@@ -41,7 +41,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc LICENSE* *.md
+%doc %{name}-%{version}/LICENSE* %{name}-%{version}/*.md
 /usr/bin/bat
 
 
