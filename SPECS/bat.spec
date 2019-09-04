@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           bat
-Version:        0.12.0
+Version:        0.12.1
 Release:        1%{?dist}
 Summary:        A cat clone with syntax highlighting and Git integration.
 
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Sep 5 2019 Jamie Curnow <jc@jc21.com> - 0.12.1-1
+- v0.12.1
+
 * Sun Sep 1 2019 Jamie Curnow <jc@jc21.com> - 0.12.0-1
 - v0.12.0
 
