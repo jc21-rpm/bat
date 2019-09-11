@@ -1,0 +1,7 @@
+{
+  "publish": {
+    "PACKAGE": "bat",
+    "GH_USER": "jc21-rpm",
+    "VERSION": "0.12.1"
+  }
+}
