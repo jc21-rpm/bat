@@ -9,7 +9,7 @@ Group:          Applications/System
 License:        GPLv2
 URL:            https://github.com/sharkdp/%{name}
 
-BuildRequires:  cmake, libgit2, openssl-devel, libzip-devel
+BuildRequires:  cmake, libgit2, openssl-devel, libzip-devel, clang-devel
 
 %description
 bat supports syntax highlighting for a large number of programming and markup languages.
