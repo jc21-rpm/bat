@@ -1,14 +1,13 @@
 %global debug_package %{nil}
 
 Name:           bat
-Version:        0.12.1
+Version:        0.13.0
 Release:        1%{?dist}
 Summary:        A cat clone with syntax highlighting and Git integration.
-
 Group:          Applications/System
 License:        GPLv2
 URL:            https://github.com/sharkdp/%{name}
-
+Source:         https://github.com/sharkdp/%{name}/archive/v%{version}.tar.gz
 BuildRequires:  cmake, libgit2, openssl-devel, libzip-devel, clang-devel
 
 %description
@@ -18,34 +17,29 @@ bat can pipe its own output to less if the output is too large for one screen.
 Oh.. you can also use it to concatenate files. Whenever bat detects a non-interactive
 terminal, it will fall back to printing the plain file contents.
 
-
 %prep
-wget https://github.com/sharkdp/%{name}/archive/v%{version}.tar.gz
-tar xzf v%{version}.tar.gz
-cd %{name}-%{version}
+%setup -n %{name}-%{version}
 
 %build
-cd %{name}-%{version}
 cargo build --release
-
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
-cp %{name}-%{version}/target/release/bat %{buildroot}/usr/bin/
-
+cp target/release/bat %{buildroot}/usr/bin/
 
 %clean
 rm -rf %{buildroot}
 
-
 %files
 %defattr(-,root,root,-)
-%doc %{name}-%{version}/LICENSE* %{name}-%{version}/*.md
+%doc LICENSE* *.md
 /usr/bin/bat
 
-
 %changelog
+* Tue Mar 24 2020 Jamie Curnow <jc@jc21.com> - 0.13.0-1
+- v0.13.0
+
 * Thu Sep 5 2019 Jamie Curnow <jc@jc21.com> - 0.12.1-1
 - v0.12.1
 
