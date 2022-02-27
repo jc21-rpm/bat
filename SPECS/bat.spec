@@ -37,6 +37,9 @@ rm -rf %{buildroot}
 /usr/bin/bat
 
 %changelog
+* Mon Feb 28 2022 Jamie Curnow <jc@jc21.com> - 0.20.0-1
+- v0.20.0
+
 * Sun Jan 9 2022 Jamie Curnow <jc@jc21.com> - 0.19.0-1
 - v0.19.0
 
