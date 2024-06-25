@@ -2,7 +2,7 @@
 
 Name:           bat
 Version:        0.24.0
-Release:        1
+Release:        1%{?dist}
 Summary:        A cat clone with syntax highlighting and Git integration.
 Group:          Applications/System
 License:        GPLv2
